@@ -69,43 +69,57 @@ class MyHomePage extends StatelessWidget {
                       width: 180),
                   color: Colors.black,
                 ),
-              )
+              ),
+              Text("Esta será una aplicación de pruebas para aprender a manejar los diferentes elementos de Flutter"),
+              ElevatedButton(onPressed: () {
+                var texto = new Text("Bien, has pulsado el botón");
+              }, child: Column(children: [Icon(Icons.add_alarm), Text("Botón de prueba")],))
             ],
           )),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.green,
+      drawer: DrawerPrueba(),
+    );
+  }
+}
+
+class DrawerPrueba extends StatelessWidget{
+
+  const DrawerPrueba({Key key}) : super(key:key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.green,
+            ),
+            child: Text(
+              'Drawer Header',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
               ),
-              child: Text(
-                'Drawer Header',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
             ),
-            ListTile(
-              leading: Icon(Icons.message),
-              title: Text('Messages'),
-              onTap: () {Navigator.pop(context);},
-              // close the drawer
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('Profile'),
-              onTap: () {Navigator.pop(context);},
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {Navigator.pop(context);},
-            ),
-          ],
-        ),
+          ),
+          ListTile(
+            leading: Icon(Icons.message),
+            title: Text('Messages'),
+            onTap: () {Navigator.pop(context);},
+            // close the drawer
+          ),
+          ListTile(
+            leading: Icon(Icons.account_circle),
+            title: Text('Profile'),
+            onTap: () {Navigator.pop(context);},
+          ),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text('Settings'),
+            onTap: () {Navigator.pop(context);},
+          ),
+        ],
       ),
     );
   }
