@@ -26,13 +26,10 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
-        child: IconButton(
-          icon: Icon(Icons.add),
-          onPressed: () {
-            print('FloatingActionButton funciona');
-
+        onPressed: () {
+          print('Funciona el floatingButton');
           },
-        ),
+        child: Icon(Icons.add),
       ),
       appBar: AppBar(
         backgroundColor: Colors.green,
@@ -53,28 +50,28 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Container(margin: EdgeInsets.all(10), padding: EdgeInsets.all(15),
           child: Column(
-        children: [
-          Text(
-            "Hola, bienvenido a Flutter",
-            style: TextStyle(fontSize: 14),
-            textAlign: TextAlign.center,
-          ),
-          IconButton(
-              icon: Icon(Icons.agriculture),
-              onPressed: () {
-                print('Funciona');
-              }),
-          Center(
-            child: Card(
-              child: Image.network(
-                  'https://upintelligence.es/wp-content/uploads/2020/01/cropped-logoB_2.png',
-                  height: 150,
-                  width: 180),
-              color: Colors.black,
-            ),
-          )
-        ],
-      )),
+            children: [
+              Text(
+                "Hola, bienvenido a Flutter",
+                style: TextStyle(fontSize: 14),
+                textAlign: TextAlign.center,
+              ),
+              IconButton(
+                  icon: Icon(Icons.agriculture),
+                  onPressed: () {
+                    print('Funciona');
+                  }),
+              Center(
+                child: Card(
+                  child: Image.network(
+                      'https://upintelligence.es/wp-content/uploads/2020/01/cropped-logoB_2.png',
+                      height: 150,
+                      width: 180),
+                  color: Colors.black,
+                ),
+              )
+            ],
+          )),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
