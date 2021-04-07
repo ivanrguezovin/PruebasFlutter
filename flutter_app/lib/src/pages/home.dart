@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
-import '../main.dart';
+import 'package:flutter_app/src/app.dart';
 
 class MyHomePage extends StatelessWidget {
 
@@ -14,7 +13,7 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
         onPressed: () {
-
+            _showDialogExit(context);
         },
         child: Icon(Icons.add),
       ),
@@ -73,3 +72,35 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+//Mostrar un Alertdialog
+void _showDialogExit(BuildContext context){
+  showDialog(context: context, builder: (BuildContext context){
+    return SimpleDialog(
+      children: <Widget>[
+        ListTile(
+          title: Text('Añadir'),
+          leading: Icon(Icons.add),
+          onTap: () {
+            print("Añadido");
+            Navigator.pop(context);
+          },
+        ),
+        ListTile(
+          title: Text('Editar'),
+          leading: Icon(Icons.edit),
+          onTap: () {
+            print("Editar");
+            Navigator.pop(context);
+          },
+        ),
+        ListTile(
+          title: Text('Cancelar'),
+          leading: Icon(Icons.cancel),
+          onTap: () {
+            Navigator.pop(context);
+          },
+        )
+      ],
+    );
+  });
+}
