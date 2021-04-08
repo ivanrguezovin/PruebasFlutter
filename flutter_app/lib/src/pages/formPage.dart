@@ -34,7 +34,6 @@ class _FormPageState extends State<FormPage> {
 
   @override
   Widget build(BuildContext context) {
-    final data = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar:AppBar(
         backgroundColor: Colors.green,
@@ -65,6 +64,7 @@ class _FormPageState extends State<FormPage> {
                       if(value.isEmpty){
                         return "Campo vacío";
                       }
+                      return null;
                     },
                     ),
                     TextFormField(
@@ -80,6 +80,7 @@ class _FormPageState extends State<FormPage> {
                         if(value.isEmpty){
                           return "Campo vacío";
                         }
+                        return null;
                     },
                     ),
                     TextFormField(
@@ -93,7 +94,9 @@ class _FormPageState extends State<FormPage> {
                       validator: (value) {
                         if(value.isEmpty){
                           return "Campo vacío";
-                        }},
+                        }
+                        return null;
+                        },
                     ),
                     TextFormField(
                       controller: phoneTextController,
@@ -106,6 +109,7 @@ class _FormPageState extends State<FormPage> {
                       if(value.isEmpty){
                         return "Campo vacío";
                       }
+                      return null;
                     },
                     ),
                     SizedBox(height: 40,),

@@ -8,9 +8,6 @@ class ListPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    //Capturar los argumentos enviados en el cambio de pantalla
-    final data = ModalRoute.of(context).settings.arguments;
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,

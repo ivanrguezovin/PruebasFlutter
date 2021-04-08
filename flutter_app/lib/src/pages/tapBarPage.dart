@@ -13,8 +13,6 @@ class TapBarPage extends StatefulWidget {
 class _TapBarPageState extends State<TapBarPage> {
   @override
   Widget build(BuildContext context) {
-
-    List<String> v = [];
     FormData data = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(

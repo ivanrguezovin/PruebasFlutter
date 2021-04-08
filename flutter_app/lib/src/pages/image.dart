@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_app/src/app.dart';
 
 class ImagePage extends StatelessWidget {
   const ImagePage({Key key}) : super(key: key);
