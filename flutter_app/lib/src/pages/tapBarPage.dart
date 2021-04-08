@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_app/src/app.dart';
+import 'package:flutter_app/src/widgets/TableTest.dart';
 import 'package:flutter_app/src/pages/formPage.dart';
 
-class TapBarPage extends StatelessWidget {
+class TapBarPage extends StatefulWidget {
   const TapBarPage({Key key}) : super(key: key);
 
   @override
+  _TapBarPageState createState() => _TapBarPageState();
+}
+
+class _TapBarPageState extends State<TapBarPage> {
+  @override
   Widget build(BuildContext context) {
 
+    List<String> v = [];
     FormData data = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.add), backgroundColor: Colors.green, onPressed: () {
-
-      },),
+      floatingActionButton: FloatingActionButton(child: Icon(Icons.add), backgroundColor: Colors.green, onPressed: () {}),
       appBar:AppBar(
         backgroundColor: Colors.green,
         elevation: 11,
@@ -48,59 +52,6 @@ class TapBarPage extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class TableTest extends StatelessWidget {
-  const TableTest({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return DataTable(
-      columns: const <DataColumn>[
-        DataColumn(
-          label: Text(
-            'Name',
-            style: TextStyle(fontStyle: FontStyle.italic),
-          ),
-        ),
-        DataColumn(
-          label: Text(
-            'Age',
-            style: TextStyle(fontStyle: FontStyle.italic),
-          ),
-        ),
-        DataColumn(
-          label: Text(
-            'Role',
-            style: TextStyle(fontStyle: FontStyle.italic),
-          ),
-        ),
-      ],
-      rows: const <DataRow>[
-        DataRow(
-          cells: <DataCell>[
-            DataCell(Text('Sarah')),
-            DataCell(Text('19')),
-            DataCell(Text('Student')),
-          ],
-        ),
-        DataRow(
-          cells: <DataCell>[
-            DataCell(Text('Janine')),
-            DataCell(Text('43')),
-            DataCell(Text('Professor')),
-          ],
-        ),
-        DataRow(
-          cells: <DataCell>[
-            DataCell(Text('William')),
-            DataCell(Text('27')),
-            DataCell(Text('Associate Professor')),
-          ],
-        ),
-      ],
     );
   }
 }
