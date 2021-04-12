@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class TableTest extends StatefulWidget {
-  const TableTest({Key key}) : super(key: key);
+  TableTest({Key key}) : super(key: key);
 
   @override
   _TableTestState createState() => _TableTestState();
+  List<DataRow> v = [];
 }
 
 class _TableTestState extends State<TableTest> {
-  List<DataRow> v;
   @override
   Widget build(BuildContext context) {
     return DataTable(
@@ -33,22 +33,14 @@ class _TableTestState extends State<TableTest> {
           ),
         ),
       ],
-      rows: v,
+      rows: widget.v,
     );
-  }
-
-  buildRow(name, age, role) {
-    v.add(new DataRow(
-        cells: <DataCell>[
-    DataCell(Text(name)),
-    DataCell(Text(age)),
-    DataCell(Text(role)),]));
   }
 
   @override
   void initState(){
     super.initState();
-    v = <DataRow>[
+    widget.v = <DataRow>[
       DataRow(
         cells: <DataCell>[
           DataCell(Text('Sarah')),
